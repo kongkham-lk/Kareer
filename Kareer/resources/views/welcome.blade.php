@@ -1,33 +1,35 @@
 <x-layout>
     <div class="space-y-10">
         <section>
-            <x-section-heading class="bg-white">Finding Jobs</x-section-heading>
+            <x-section-heading class="bg-white">Tops Jobs</x-section-heading>
             <div class="grid lg:grid-cols-3 gap-4">
-                <x-job-card/>
-                <x-job-card/>
-                <x-job-card/>
+                <x-job-card-sm></x-job-card-sm>
+                <x-job-card-sm></x-job-card-sm>
+                <x-job-card-sm></x-job-card-sm>
             </div>
         </section>
         <section>
-            <x-section-heading class="bg-white">Finding Jobs</x-section-heading>
-            <div class="gap-2 mt-4">
-                <x-tag href="/">tags</x-tag>
-                <x-tag href="/">tags</x-tag>
-                <x-tag href="/">tags</x-tag>
-                <x-tag href="/">tags</x-tag>
-                <x-tag href="/">tags</x-tag>
-                <x-tag href="/">tags</x-tag>
-                <x-tag href="/">tags</x-tag>
-                <x-tag href="/">tags</x-tag>
-                <x-tag href="/">tags</x-tag>
+            <x-section-heading class="bg-white">Tags</x-section-heading>
+            <div class="flex flex-wrap gap-3 mt-4">
+                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag-lg href="/">tags</x-tag-lg>
             </div>
         </section>
         <section>
-            <x-section-heading class="bg-white">Finding Jobs</x-section-heading>
-            <div class="grid lg:grid-cols-3 gap-4">
-                <x-job-card/>
-                <x-job-card/>
-                <x-job-card/>
+            <x-section-heading class="bg-white">Job Listings</x-section-heading>
+            <div class="mt-3 space-y-3">
+                <x-job-card-lg/>
+                <x-job-card-lg/>
+                <x-job-card-lg/>
+                <x-job-card-lg/>
             </div>
         </section>
 
