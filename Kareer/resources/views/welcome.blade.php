@@ -11,16 +11,15 @@
         <section>
             <x-section-heading class="bg-white">Tags</x-section-heading>
             <div class="flex flex-wrap gap-3 mt-4">
-                <x-tag-lg href="/">tags</x-tag-lg>
-                <x-tag-lg href="/">tags</x-tag-lg>
-                <x-tag-lg href="/">tags</x-tag-lg>
-                <x-tag-lg href="/">tags</x-tag-lg>
-                <x-tag-lg href="/">tags</x-tag-lg>
-                <x-tag-lg href="/">tags</x-tag-lg>
-                <x-tag-lg href="/">tags</x-tag-lg>
-                <x-tag-lg href="/">tags</x-tag-lg>
-                <x-tag-lg href="/">tags</x-tag-lg>
-                <x-tag-lg href="/">tags</x-tag-lg>
+                <x-tag href="/" size="lg">tags</x-tag>
+                <x-tag href="/" size="lg">tags</x-tag>
+                <x-tag href="/" size="lg">tags</x-tag>
+                <x-tag href="/" size="lg">tags</x-tag>
+                <x-tag href="/" size="lg">tags</x-tag>
+                <x-tag href="/" size="lg">tags</x-tag>
+                <x-tag href="/" size="lg">tags</x-tag>
+                <x-tag href="/" size="lg">tags</x-tag>
+                <x-tag href="/" size="lg">tags</x-tag>
             </div>
         </section>
         <section>
