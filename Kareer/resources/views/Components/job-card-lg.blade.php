@@ -1,3 +1,5 @@
+@props(['job'])
+
 <x-job-card-container>
     <div>
         <x-employer-logo size="{{ 100 }}"/>
@@ -8,8 +10,8 @@
         <p class="text-sm text-gray-400 mt-auto">Full time - $50,000</p>
     </div>
     <div class="space-x-1.5">
-        <x-tag href="/">tags</x-tag>
-        <x-tag href="/">tags</x-tag>
-        <x-tag href="/">tags</x-tag>
+        @foreach($job->tags as $tag)
+            <x-tag :$tag />
+        @endforeach
     </div>
 </x-job-card-container>

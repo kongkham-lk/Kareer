@@ -1,3 +1,5 @@
+@props(['job'])
+
 <x-job-card-container class="flex-col">
     <div class="text-sm text-gray-400">Laracast</div>
     <div>
@@ -6,9 +8,9 @@
     </div>
     <div class="flex justify-between items-center mt-auto">
         <div class="space-x-1.5">
-            <x-tag href="/">tags</x-tag>
-            <x-tag href="/">tags</x-tag>
-            <x-tag href="/">tags</x-tag>
+            @foreach($job->tags as $tag)
+                <x-tag :$tag />
+            @endforeach
         </div>
         <x-employer-logo size="{{ 42 }}" />
     </div>
