@@ -1,11 +1,11 @@
 <x-layout>
     <div class="space-y-10">
-        <section class="flex flex-col items-center py-8">
+        <section class="text-center py-8">
             <h1 class="mx-auto text-4xl font-bold">Let's Find You A Great Job</h1>
-            <form action="">
+            <form class="w-full justify-items-center" action="">
                 <input type="text"
                        placeholder="I am looking for..."
-                       class="block rounded-2xl bg-white/5 border border-white/10 py-3 px-4 mt-5 w-2xl placeholder:text-gray-400 focus:outline-none sm:text-sm/6">
+                       class="block rounded-2xl bg-white/5 border border-white/10 py-3 px-4 mt-5 w-full max-w-2xl placeholder:text-gray-400 focus:outline-none sm:text-sm/6">
             </form>
         </section>
         <section>
