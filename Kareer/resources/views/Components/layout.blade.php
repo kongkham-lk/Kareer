@@ -7,7 +7,7 @@
     <title>Document</title>
     @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
-<body class="bg-neutral-950 text-white">
+<body class="bg-neutral-950 text-white font-museo pb-18">
     <div class="px-10">
         <nav class=" flex items-center justify-between py-4 border-b border-white/15 ">
             <a href="/" class="flex gap-2 items-center">
@@ -22,7 +22,7 @@
             </div>
             <div class="">Post jobs</div>
         </nav>
-        <main class="mt-10 max-w-[986px] mx-auto">
+        <main class="mt-18 max-w-[986px] mx-auto py-2">
             {{ $slot }}
         </main>
     </div>

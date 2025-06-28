@@ -2,7 +2,7 @@
 
 <x-layout>
     <div class="space-y-10">
-        <section class="text-center py-8">
+        <section class="text-center">
             <h1 class="mx-auto text-4xl font-bold">Let's Find You A Great Job</h1>
             <form class="w-full justify-items-center" action="">
                 <input type="text"
