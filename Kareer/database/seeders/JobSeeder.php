@@ -16,5 +16,8 @@ class JobSeeder extends Seeder
     {
         $tags = Tag::factory(3)->create();
         Job::factory(20)->hasAttached($tags)->create();
+        Job::factory(5)->hasAttached($tags)->create([
+            'featured' => true,
+        ]);
     }
 }
