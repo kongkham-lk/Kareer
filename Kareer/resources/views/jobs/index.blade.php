@@ -1,4 +1,4 @@
-@props(['jobs', 'tags'])
+@props(['featuredJobs', 'jobs', 'tags'])
 
 <x-layout>
     <div class="space-y-10">
@@ -13,10 +13,8 @@
         <section>
             <x-section-heading class="bg-white">Feature Jobs</x-section-heading>
             <div class="grid lg:grid-cols-3 gap-4">
-                @foreach($jobs as $job)
-                    @if($job->featured)
-                        <x-job-card-sm :$job />
-                    @endif
+                @foreach($featuredJobs as $job)
+                    <x-job-card-sm :$job />
                 @endforeach
             </div>
         </section>
