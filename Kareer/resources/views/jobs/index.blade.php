@@ -29,7 +29,7 @@
             </div>
         </section>
         <section>
-            <x-section-heading class="bg-white">Job Listings</x-section-heading>
+            <x-section-heading class="bg-white">Recent Jobs</x-section-heading>
             <div class="mt-3 space-y-3">
                 @foreach($jobs as $job)
                     <x-job-card-lg :$job />
