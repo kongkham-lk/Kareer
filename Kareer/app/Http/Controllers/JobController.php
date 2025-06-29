@@ -44,7 +44,7 @@ class JobController extends Controller
             'salary' => ['required'],
             'type' => ['required', Rule::in(['Full Time', 'Part Time', 'Contract', 'Internship / Co-op'])],
             'url' => ['required', 'active_url'],
-            'featured' => ['boolean'],
+            'featured' => ['accepted'], // accept both true/false or on/off (for checkbox)
             'tags' => ['nullable'],
         ]);
 
@@ -55,10 +55,9 @@ class JobController extends Controller
 
         if ($attribute['tags'] ?? false) { // if nth then false
             foreach (explode(',', $attribute['tags']) as $tag) {
-                $job->tag($tag);
+                $job->tag(trim($tag));
             }
         }
-
         return redirect('/');
     }
 }

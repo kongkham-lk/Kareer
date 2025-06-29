@@ -28,7 +28,7 @@ class SessionController extends Controller
 
         if (!Auth::attempt($validate)) {
             throw ValidationException::withMessages([
-                'email' => 'Sorry, your email or password is incorrect.',
+                'password' => 'Sorry, your email or password is incorrect.',
             ]);
         }
 
