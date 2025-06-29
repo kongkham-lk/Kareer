@@ -4,11 +4,9 @@
     <div class="space-y-10">
         <section class="text-center">
             <h1 class="mx-auto text-4xl font-bold">Let's Find You A Great Job</h1>
-            <form class="w-full justify-items-center" action="">
-                <input type="text"
-                       placeholder="I am looking for..."
-                       class="block rounded-2xl bg-white/5 border border-white/10 py-3 px-4 mt-5 w-full max-w-2xl placeholder:text-gray-400 focus:outline-none">
-            </form>
+            <x-forms.form method="GET" action="/search" class="mt-4">
+                <x-forms.input :label="false" name="q" placeholder="Web developer..."></x-forms.input>
+            </x-forms.form>
         </section>
         <section>
             <x-section-heading class="bg-white">Feature Jobs</x-section-heading>
