@@ -22,10 +22,10 @@
             </div>
             @auth
                 <div class="space-x-6 font-bold flex items-center">
-                    <a href="" class="">Post Job</a>
 {{--                    <x-forms.form method="DELETE" action="/logout">--}}
                         <x-forms.button>Logout</x-forms.button>
 {{--                    </x-forms.form>--}}
+                    <a href="/jobs/create" class="">Post Job</a>
                 </div>
             @endauth
             @guest
