@@ -34,7 +34,9 @@ class RegisterController extends Controller
             'logo' => ['required', File::types(['jpeg','png','jpg'])],
         ]);
 
-        $logoPath = $request->logo->store('logos'); // store in a storage folder then get the dir path
+        // store in a storage folder then get the dir path (LOCALLY)
+        // to make publicly access, go to .env -> FILESYSTEM_DISK=public
+        $logoPath = "storage/".$request->logo->store('logos'); // it seems that "storage/" is needed to as a correct path
 
         $user = User::create($userAttr);
         $user->employer()->create([

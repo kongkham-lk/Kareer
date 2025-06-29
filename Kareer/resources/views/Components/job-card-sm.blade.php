@@ -1,7 +1,10 @@
-@props(['job'])
+@props(['job', 'employer'])
+@php
+    $employer = $job->employer;
+@endphp
 
 <x-job-card-container class="flex-col">
-    <div class="text-sm text-gray-400">{{ $job->employer->name }}</div>
+    <div class="text-sm text-gray-400">{{ $employer->name }}</div>
     <div>
         <h3 class="group-hover:text-blue-700 font-bold transition-colors duration-150">
             <a href="{{ $job->url }}" target="_blank">
@@ -16,6 +19,6 @@
                 <x-tag :$tag />
             @endforeach
         </div>
-        <x-employer-logo :size="42" :$job />
+        <x-employer-logo :size="42" :$employer/>
     </div>
 </x-job-card-container>

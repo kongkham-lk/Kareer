@@ -1,3 +1,4 @@
-@props(['job','size'])
+@props(['employer','size'])
 
-<img class="rounded-xl" src="{{ $job->employer->logo }}{{ $size }}" alt="employer logo">
+{{-- asset() help prepare url nicely --}}
+<img class="rounded-xl" src="{{ asset("$employer->logo") }}" alt="logo" width="{{ $size }}">

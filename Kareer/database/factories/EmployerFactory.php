@@ -19,7 +19,7 @@ class EmployerFactory extends Factory
     {
         return [
             "name" => $this->faker->name(),
-            "logo" => 'https://picsum.photos/id/'.rand(200, 1000).'/',
+            "logo" => 'https://picsum.photos/id/'.rand(200, 1000).'/100',
             "user_id" => User::factory(),
         ];
     }

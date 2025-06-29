@@ -1,11 +1,14 @@
-@props(['job'])
+@props(['job', 'employer'])
+@php
+    $employer = $job->employer;
+@endphp
 
 <x-job-card-container>
     <div>
-        <x-employer-logo :size="100" :$job />
+        <x-employer-logo :size="100" :$employer/>
     </div>
     <div class="flex flex-col flex-1">
-        <div class="text-sm text-gray-400">{{ $job->employer->name }}</div>
+        <div class="text-sm text-gray-400">{{ $employer->name }}</div>
         <h3 class="text-xl font-bold mt-2 group-hover:text-blue-700 transition-colors duration-150">
             <a href="{{ $job->url }}" target="_blank">
                 {{ $job->title }}
