@@ -20,7 +20,21 @@
                 <a href="#">Salaries</a>
                 <a href="#">Companies</a>
             </div>
-            <div class="">Post jobs</div>
+            @auth
+                <div class="space-x-6 font-bold flex items-center">
+                    <a href="" class="">Post Job</a>
+{{--                    <x-forms.form method="DELETE" action="/logout">--}}
+                        <x-forms.button>Logout</x-forms.button>
+{{--                    </x-forms.form>--}}
+                </div>
+            @endauth
+            @guest
+                <div class="space-x-6 font-bold">
+                    <a href="/register" class="">Sign Up</a>
+                    <a href="/login" class="">log In</a>
+                </div>
+            @endguest
+
         </nav>
         <main class="mt-18 max-w-[986px] mx-auto py-2">
             {{ $slot }}

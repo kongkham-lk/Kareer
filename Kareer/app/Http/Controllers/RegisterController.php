@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\File;
+use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -27,38 +23,26 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $userAttr = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required','email','unique:users,email'],
+            'password' => ['required','confirmed', Password::min(8)],
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $employerAttr = $request->validate([
+            'employer' => ['required', 'string', 'max:255'],
+            'logo' => ['required', File::types(['jpeg','png','jpg'])],
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        $logoPath = $request->logo->store('logos'); // store in a storage folder then get the dir path
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        $user = User::create($userAttr);
+        $user->employer()->create([
+            'name' => $employerAttr['employer'],
+            'logo' => $logoPath,
+        ]);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        Auth::login($user);
+        redirect('/');
     }
 }
