@@ -22,10 +22,12 @@
             </div>
             @auth
                 <div class="space-x-6 font-bold flex items-center">
-{{--                    <x-forms.form method="DELETE" action="/logout">--}}
-                        <x-forms.button>Logout</x-forms.button>
-{{--                    </x-forms.form>--}}
                     <a href="/jobs/create" class="">Post Job</a>
+                    <form method="POST" action="/logout">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" class="cursor-pointer">Logout</button>
+                    </form>
                 </div>
             @endauth
             @guest
