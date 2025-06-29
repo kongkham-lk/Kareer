@@ -4,7 +4,7 @@
     $defaults = [
         'id' => $name,
         'name' => $name,
-        'class' => 'rounded-xl bg-white/10 border border-white/10 px-5 py-4 w-full'
+        'class' => 'rounded-2xl bg-white/5 border border-white/10 py-3.5 px-4 mt-1 w-full max-w-2xl focus:outline-none'
     ];
 @endphp
 

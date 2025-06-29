@@ -31,7 +31,7 @@
             @guest
                 <div class="space-x-6 font-bold">
                     <a href="/register" class="">Sign Up</a>
-                    <a href="/login" class="">log In</a>
+                    <a href="/login" class="">Log In</a>
                 </div>
             @endguest
 

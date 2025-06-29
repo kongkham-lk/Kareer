@@ -15,7 +15,7 @@ class Job extends Model
 
     public function tag(string $newTag): void
     {
-        $tag =  Tag::firstOrCreate(['name' => $newTag]);
+        $tag =  Tag::firstOrCreate(['name' => $newTag]); // create a new tag if not exist, else just fetch
 
         $this->tags()->attach($tag);
     }
