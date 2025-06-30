@@ -31,6 +31,10 @@
                     <x-job-card-lg :$job />
                 @endforeach
             </div>
+            <div class="mt-4">
+                {{-- Pagination footer --}}
+                {{ $jobs->links('vendor.pagination.tailwind') }}
+            </div>
         </section>
 
     </div>

@@ -17,11 +17,11 @@ class JobController extends Controller
     public function index()
     {
         // use with() for eager load
-        $jobs = Job::latest()->with(['employer', 'tags'])->get();
+        $jobs = Job::with(['employer', 'tags'])->latest();
 
         return view('jobs.index', [
-            'featuredJobs' => $jobs->groupBy('featured')[1],
-            'jobs' => $jobs,
+            'featuredJobs' => $jobs->get()->groupBy('featured')[1],
+            'jobs' => $jobs->paginate(10),
             'tags' => Tag::all()
         ]);
     }
