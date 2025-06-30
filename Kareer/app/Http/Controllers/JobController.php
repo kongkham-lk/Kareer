@@ -16,7 +16,8 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::latest()->get();
+        // use with() for eager load
+        $jobs = Job::latest()->with(['employer', 'tags'])->get();
 
         return view('jobs.index', [
             'featuredJobs' => $jobs->groupBy('featured')[1],
