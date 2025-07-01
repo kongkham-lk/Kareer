@@ -14,12 +14,12 @@
                 <img class="size-6" src="{{ Vite::asset('resources/images/icons-job-seeker-100-white.png') }}" alt="logo"/>
                 <div>Kareer</div>
             </a>
-            <div class="space-x-6 font-bold">
-                <a href="#">Jobs</a>
-                <a href="#">Careers</a>
-                <a href="#">Salaries</a>
-                <a href="#">Companies</a>
-            </div>
+{{--            <div class="space-x-6 font-bold">--}}
+{{--                <a href="#">Jobs</a>--}}
+{{--                <a href="#">Careers</a>--}}
+{{--                <a href="#">Salaries</a>--}}
+{{--                <a href="#">Companies</a>--}}
+{{--            </div>--}}
             @auth
                 <div class="space-x-6 font-bold flex items-center">
                     <a href="/jobs/create" class="">Post Job</a>
