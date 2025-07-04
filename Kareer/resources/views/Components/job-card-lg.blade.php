@@ -20,6 +20,6 @@
                 <x-tag :$tag />
             @endforeach
         </div>
-        <x-url-button :url="$job->url" target="_blank">Apply</x-url-button>
+        <x-url-button class="text-xs" :url="$job->url" target="_blank">Apply</x-url-button>
     </div>
 </x-job-card-container>

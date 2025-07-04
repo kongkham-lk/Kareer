@@ -21,19 +21,20 @@
 {{--                <a href="#">Companies</a>--}}
 {{--            </div>--}}
             @auth
-                <div class="space-x-6 font-bold flex items-center">
-                    <a href="/jobs/create" class="">Post Job</a>
+                <div class="space-x-4 font-bold flex items-center group">
+                    <x-url-button class="text-md bg-transparent border-none" url="/jobs/create">Post Job</x-url-button>
+
                     <form method="POST" action="/logout">
                         @csrf
                         @method("DELETE")
-                        <button type="submit" class="cursor-pointer">Logout</button>
+                        <button type="submit" class="cursor-pointer rounded-lg py-2 px-4 bg-blue-800 group-hover:bg-transparent hover:bg-neutral-700 transition-colors duration-150">Logout</button>
                     </form>
                 </div>
             @endauth
             @guest
-                <div class="space-x-6 font-bold">
-                    <a href="/register" class="">Sign Up</a>
-                    <a href="/login" class="">Log In</a>
+                <div class="font-bold">
+                    <x-url-button class="text-md max-w-1 bg-transparent border-none" url="/register">Sign Up</x-url-button>
+                    <x-url-button class="text-md bg-transparent border-none" url="/login">Log In</x-url-button>
                 </div>
             @endguest
 
