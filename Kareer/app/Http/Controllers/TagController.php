@@ -8,6 +8,6 @@ class TagController extends Controller
 {
     public function __invoke(Tag $tag)
     {
-        return view('jobs.results', ['jobs' => $tag->jobs]);
+        return view('jobs.search-results', ['jobs' => $tag->jobs]);
     }
 }

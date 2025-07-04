@@ -4,16 +4,14 @@
 @endphp
 
 <x-job-card-container class="justify-between">
-    <div class="flex-col">
+    <div class="flex flex-col space-y-3">
         <div class="text-sm text-gray-400">{{ $employer->name }}</div>
-        <div>
-            <h3 class="font-bold transition-colors duration-150">
-                {{ $job->title }}
-            </h3>
-            <p class="text-sm mt-2 text-gray-400">{{ $job->type }} - {{ $job->salary }}</p>
-        </div>
-        <div class="flex justify-between items-center mt-auto">
-            <div class="space-x-1.5">
+        <h3 class="font-bold transition-colors duration-150">
+            {{ $job->title }}
+        </h3>
+        <div class="mt-auto">
+            <p class="text-sm text-gray-400">{{ $job->type }} - {{ $job->salary }}</p>
+            <div class="space-x-1.5 mt-1.5">
                 @foreach($job->tags as $tag)
                     <x-tag :$tag />
                 @endforeach

@@ -17,7 +17,7 @@
     <div class="flex flex-col justify-between items-end">
         <div class="space-x-1.5">
             @foreach($job->tags as $tag)
-                <x-tag :$tag />
+                <x-tag :$tag size="lg" class="py-4"/>
             @endforeach
         </div>
         <x-url-button class="text-xs" :url="$job->url" target="_blank">Apply</x-url-button>
