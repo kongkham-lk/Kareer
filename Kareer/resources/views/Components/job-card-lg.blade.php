@@ -20,6 +20,6 @@
                 <x-tag :$tag />
             @endforeach
         </div>
-        <a class="mt-auto text-xs bg-blue-800 rounded-xl py-2 px-6 font-bold cursor-pointer" href="{{ $job->url }}" target="_blank">Apply</a>
+        <x-url-button :url="$job->url" target="_blank">Apply</x-url-button>
     </div>
 </x-job-card-container>
