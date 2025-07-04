@@ -10,6 +10,6 @@ class SearchController extends Controller
     {
         // use with() for eager load
         $jobs = Job::with(['employer', 'tags'])->where('title', 'LIKE', '%'.request('q').'%')->get();
-        return view('jobs.results', ['jobs' => $jobs]);
+        return view('jobs.search-results', ['jobs' => $jobs]);
     }
 }
