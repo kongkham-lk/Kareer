@@ -20,8 +20,8 @@
 {{--                <a href="#">Salaries</a>--}}
 {{--                <a href="#">Companies</a>--}}
 {{--            </div>--}}
-            @auth
-                <div class="space-x-4 font-bold flex items-center group">
+            <div class="space-x-4 font-bold flex items-center group">
+                @auth
                     <x-url-button class="text-md bg-transparent border-none" url="/jobs/create">Post Job</x-url-button>
 
                     <form method="POST" action="/logout">
@@ -29,15 +29,12 @@
                         @method("DELETE")
                         <button type="submit" class="cursor-pointer rounded-lg py-2 px-4 bg-blue-800 group-hover:bg-transparent hover:bg-neutral-700 transition-colors duration-150">Logout</button>
                     </form>
-                </div>
-            @endauth
-            @guest
-                <div class="font-bold">
-                    <x-url-button class="text-md max-w-1 bg-transparent border-none" url="/register">Sign Up</x-url-button>
+                @endauth
+                @guest
+                    <x-url-button class="text-md bg-transparent border-none" url="/register">Sign Up</x-url-button>
                     <x-url-button class="text-md bg-transparent border-none" url="/login">Log In</x-url-button>
-                </div>
-            @endguest
-
+                @endguest
+            </div>
         </nav>
         <main class="mt-18 max-w-[986px] mx-auto py-2">
             {{ $slot }}
