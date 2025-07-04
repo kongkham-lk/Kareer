@@ -20,7 +20,7 @@
             <x-section-heading class="bg-white">Tags</x-section-heading>
             <div class="flex flex-wrap gap-3 mt-4">
                 @foreach($tags as $tag)
-                    <x-tag size="lg" :tag="$tag" /> {{-- can be :tag="$tag" || :$tag --}}
+                    <x-tag size="lg" :tag="$tag" :attachUrl="true" /> {{-- can be :tag="$tag" || :$tag --}}
                 @endforeach
             </div>
         </section>
