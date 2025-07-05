@@ -19,8 +19,9 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col justify-between items-end">
-            <x-employer-logo :size="42" :$employer/>
+        <div class="flex flex-col justify-between items-end justify-star">
+            <x-employer-logo :size="48" :$employer/>
+            <div class="text-sm text-gray-400 text-end">{{ $job->created_at->diffForHumans() }}</div>
         </div>
     </x-job-card-container>
 </a>
