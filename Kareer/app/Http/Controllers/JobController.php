@@ -18,9 +18,11 @@ class JobController extends Controller
     {
         // use with() for eager load
         $jobs = Job::with(['employer', 'tags'])->latest();
+        $featuredJobs =  $jobs->get()->groupBy('featured');
+//        dd($jobs->get()->groupBy('featured'));
 
         return view('jobs.index', [
-            'featuredJobs' => $jobs->get()->groupBy('featured')[1],
+            'featuredJobs' => $featuredJobs->isEmpty() ? [] : $featuredJobs[1],
             'jobs' => $jobs->paginate(10),
             'tags' => Tag::all()
         ]);
