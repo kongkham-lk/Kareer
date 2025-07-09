@@ -1,10 +1,11 @@
 FROM richarvey/nginx-php-fpm:1.7.2
 
-COPY . /var/www/html/
+COPY . /var/www/html/Kareer/
+WORKDIR /var/www/html/Kareer/
 
 # Image config
-ENV SKIP_COMPOSER 1
-ENV WEBROOT /var/www/html/public
+#ENV SKIP_COMPOSER 1
+ENV WEBROOT /var/www/html/Kareer/public
 ENV PHP_ERRORS_STDERR 1
 ENV RUN_SCRIPTS 1
 ENV REAL_IP_HEADER 1
