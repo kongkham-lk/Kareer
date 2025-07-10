@@ -1,13 +1,9 @@
-FROM richarvey/nginx-php-fpm:1.7.2
+FROM richarvey/nginx-php-fpm:latest
 
-COPY . /var/www/html/
-WORKDIR /var/www/html/
-RUN echo "📁 Checking root of web folder:" && ls -la /var/www/html && \
-    echo "📁 Checking Laravel app folder:" && ls -la /var/www/html/Kareer
-
+COPY . .
 
 # Image config
-#ENV SKIP_COMPOSER 1
+ENV SKIP_COMPOSER 1
 ENV WEBROOT /var/www/html/public
 ENV PHP_ERRORS_STDERR 1
 ENV RUN_SCRIPTS 1
