@@ -1,6 +1,18 @@
+# Laravel app
+FROM node:18 AS vite
+
+WORKDIR /app
+COPY . .
+RUN npm install && npm run build
+
+# Final app image
 FROM richarvey/nginx-php-fpm:latest
 
+WORKDIR /var/www/html
 COPY . .
+
+# Copy built Vite assets
+COPY --from=vite /app/public/build ./public/build
 
 # Image config
 ENV SKIP_COMPOSER 1
