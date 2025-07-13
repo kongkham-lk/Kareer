@@ -26,3 +26,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/jobs/create', [JobController::class,  'store']);
 });
 
+Route::get('/jobs/{job}', [JobController::class,'show']);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/jobs/{job}/edit', [JobController::class,'edit']);
+    Route::patch('/jobs/{job}', [JobController::class,'update']);
+    Route::delete('/jobs/{job}', [JobController::class,'delete']);
+})->can('edit', 'job');
+
+

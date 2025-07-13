@@ -3,8 +3,8 @@
     $employer = $job->employer;
 @endphp
 
-<a href="{{ $job->url }}" target="_blank">
-    <x-job-card-container class="">
+<a href="/jobs/{{ $job->id }}">
+    <x-job-card-container>
         <div>
             <x-employer-logo :size="120" :$employer/>
         </div>

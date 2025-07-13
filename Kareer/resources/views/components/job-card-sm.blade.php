@@ -3,7 +3,7 @@
     $employer = $job->employer;
 @endphp
 
-<a href="{{ $job->url }}" target="_blank">
+<a href="/jobs/{{ $job->id }}">
     <x-job-card-container class="justify-between" :$job>
         <div class="flex flex-col space-y-3">
             <div class="text-sm text-gray-400">{{ $employer->name }}</div>
