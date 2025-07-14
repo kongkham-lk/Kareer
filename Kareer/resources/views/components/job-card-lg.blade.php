@@ -6,7 +6,7 @@
 <a href="/jobs/{{ $job->id }}">
     <x-job-card-container>
         <div>
-            <x-employer-logo :size="120" :$employer/>
+            <x-employer-logo :size="100" :$employer/>
         </div>
         <div class="flex flex-col flex-1 space-y-3">
             <div class="text-sm text-gray-400">{{ $employer->name }}</div>
