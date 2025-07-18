@@ -35,4 +35,5 @@ return [
         ],
     ],
 
+    'IS_DEVELOPEMENT' => env('IS_DEVELOPEMENT', false),
 ];
