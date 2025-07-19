@@ -11,5 +11,5 @@
 @endphp
 
 <x-forms.field :$label :$name>
-    <textarea {{ $attributes($defaults) }} required>{{ old($name) }}</textarea>
+    <textarea {{ $attributes($defaults) }}>{{ old($name) }}</textarea>
 </x-forms.field>

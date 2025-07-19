@@ -14,7 +14,7 @@
         <x-forms.input label="URL" name="url" placeholder="https://www.example.com/career/role-needed" required/>
         <x-forms.checkbox label="Feature" subLabel="Feature (Cost Extra)" name="featured"/>
         <x-forms.divider/>
-        <x-forms.textarea class="sc" label="Job Description" name="description" placeholder="About the job and minimum qualifications..."/>
+        <x-forms.textarea label="Job Description" name="description" placeholder="About the job and minimum qualifications..." required/>
         <x-forms.input label="Tags (comma separated)" name="tags" placeholder="ML, Laravel, Education..."/>
         <x-forms.button type="submit">Post Job</x-forms.button>
     </x-forms.form>

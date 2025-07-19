@@ -52,7 +52,8 @@ class JobController extends Controller
             'salary' => ['required'],
             'type' => ['required', Rule::in(['Full Time', 'Part Time', 'Contract', 'Internship / Co-op'])],
             'url' => ['required', 'active_url'],
-            'featured' => ['accepted'], // accept both true/false or on/off (for checkbox)
+            'featured' => ['nullable'], // accept both true/false or on/off (for checkbox)
+            'description' => ['required'],
             'tags' => ['nullable'],
         ]);
 
