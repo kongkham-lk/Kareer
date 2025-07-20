@@ -1,6 +1,10 @@
 @props(['job'])
 @php
+    use League\CommonMark\CommonMarkConverter;
+
     $employer = $job->employer;
+    $converter = new CommonMarkConverter();
+    $description = $converter->convert($job->description);
 @endphp
 
 <x-layout>
@@ -33,7 +37,9 @@
 
     <x-job-card-container class="mt-5 flex flex-col p-10" :hover="false">
         <h1 class="font-bold text-2xl">About the Job</h1>
-        <p>{{ $job->description }}</p>
+        <p>{{ $description }}</p>
+{{--        <p >{!! $description !!}</p>--}}
+{{--        <p >{!! nl2br($description) !!}</p>--}}
     </x-job-card-container>
 
 </x-layout>
