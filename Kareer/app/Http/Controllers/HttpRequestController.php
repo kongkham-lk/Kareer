@@ -30,6 +30,7 @@ class HttpRequestController extends Controller
             ->withHeaders([ 'X-Sender-App' => 'KAREER App' ])
             ->get($targetURL);
 
+        Log::info("Ping back: $targetURL");
         return response()->json(['message' => 'Ping received', 'sender' => $sender]);
     }
 }
