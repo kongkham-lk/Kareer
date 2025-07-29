@@ -4,7 +4,7 @@
 
     $employer = $job->employer;
     $converter = new CommonMarkConverter();
-    $description = $converter->convert($job->description);
+    $description = is_null($job->description) ? " " : $converter->convert($job->description);
 @endphp
 
 <x-layout>
