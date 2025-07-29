@@ -37,9 +37,8 @@
 
     <x-job-card-container class="mt-5 flex flex-col p-10" :hover="false">
         <h1 class="font-bold text-2xl">About the Job</h1>
-        <p>{{ $description }}</p>
-{{--        <p >{!! $description !!}</p>--}}
-{{--        <p >{!! nl2br($description) !!}</p>--}}
+        {{-- Mark down need to reimplement (BULLET POINT WON'T SHOW) --}}
+        <p >{!! $description !!}</p>
     </x-job-card-container>
 
 </x-layout>
