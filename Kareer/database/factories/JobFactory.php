@@ -24,6 +24,7 @@ class JobFactory extends Factory
             'type' => $this->faker->randomElement(['Full Time', 'Part Time', 'Contract']),
             'url' => $this->faker->url(),
             'featured' => false,
+            'description' => $this->faker->paragraph(),
             'employer_id' => Employer::factory(),
         ];
     }

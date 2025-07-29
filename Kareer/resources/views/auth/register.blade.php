@@ -10,6 +10,6 @@
         <x-forms.input label="Employer Name" name="employer"/>
         <x-forms.input label="Employer Logo" name="logo" type="file"/>
         <x-forms.divider/>
-        <x-forms.button type="submit">Create Account</x-forms.button>
+        <x-forms.button-submit type="submit">Create Account</x-forms.button-submit>
     </x-forms.form>
 </x-layout>
