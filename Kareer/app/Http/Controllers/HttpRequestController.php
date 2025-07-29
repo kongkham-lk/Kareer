@@ -23,6 +23,7 @@ class HttpRequestController extends Controller
             ? 'http://localhost:3000/callback'
             : 'https://myping-app.onrender.com/callback';
         Log::info("Ping received from: $sender");
+        Log::info("Ping back: $targetURL");
 
         // Send request back in background (non-blocking)
         $response = Http::retry(3, 500) // retry 3 times, 1s interval
@@ -37,8 +38,7 @@ class HttpRequestController extends Controller
         } else {
             Log::error("Ping failed with status: " . $response->status());
         }
-        
-        Log::info("Ping back: $targetURL");
+
         return response()->json(['message' => 'Ping received', 'sender' => $sender]);
     }
 }
