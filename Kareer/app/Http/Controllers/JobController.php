@@ -28,6 +28,11 @@ class JobController extends Controller
         ]);
     }
 
+    public function show(Job $job) {
+//         dd($job); // WILD CARD for checking variable's content
+        return view('jobs.show', ['job' => $job]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -47,7 +52,8 @@ class JobController extends Controller
             'salary' => ['required'],
             'type' => ['required', Rule::in(['Full Time', 'Part Time', 'Contract', 'Internship / Co-op'])],
             'url' => ['required', 'active_url'],
-            'featured' => ['accepted'], // accept both true/false or on/off (for checkbox)
+            'featured' => ['nullable'], // accept both true/false or on/off (for checkbox)
+            'description' => ['required'],
             'tags' => ['nullable'],
         ]);
 
@@ -62,5 +68,30 @@ class JobController extends Controller
             }
         }
         return redirect('/');
+    }
+
+    public function edit(Job $job) {
+        // // inline authorization (need to pass to each function) or add at the each route that apply to every related function
+        // Gate::authorize('edit-job', $job);
+        return view('jobs.edit', ['job' => $job]);
+    }
+
+    public function update(Job $job) {
+        request()->validate([
+            'title'=> ['required','min:3'],
+            'salary'=> ['required'],
+        ]);
+
+        $job->update([
+            'title'=> request('title'),
+            'salary'=> request('salary'),
+        ]);
+
+        return redirect('/jobs/'. $job->id);
+    }
+
+    public function destroy(Job $job) {
+        $job->delete();
+        return redirect('/jobs');
     }
 }

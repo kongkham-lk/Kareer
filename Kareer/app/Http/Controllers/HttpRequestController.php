@@ -23,12 +23,21 @@ class HttpRequestController extends Controller
             ? 'http://localhost:3000/callback'
             : 'https://myping-app.onrender.com/callback';
         Log::info("Ping received from: $sender");
+        Log::info("Ping back: $targetURL");
 
         // Send request back in background (non-blocking)
-        Http::timeout(1)
+        $response = Http::retry(3, 500) // retry 3 times, 1s interval
+            ->timeout(5)
             ->withoutVerifying()
             ->withHeaders([ 'X-Sender-App' => 'KAREER App' ])
             ->get($targetURL);
+
+        if ($response->successful()) {
+            $body = $response->body(); // This should be "Ping Received!"
+            Log::info("$body");
+        } else {
+            Log::error("Ping failed with status: " . $response->status());
+        }
 
         return response()->json(['message' => 'Ping received', 'sender' => $sender]);
     }

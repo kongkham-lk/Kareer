@@ -4,6 +4,6 @@
         <x-forms.input label="Email" name="email" type="email"/>
         <x-forms.input label="Password" name="password" type="password"/>
         <x-forms.divider/>
-        <x-forms.button type="submit">Log In</x-forms.button>
+        <x-forms.button-submit type="submit">Log In</x-forms.button-submit>
     </x-forms.form>
 </x-layout>
