@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('type')->default('Full Time');
             $table->string('url');
             $table->boolean('featured')->default(false);
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
